@@ -8,10 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (query) {
             url += `?q={"nom":{"$like":"%${query}%"}}`;
         }
+        console.log('Fetching URL:', url);
 
         fetch(url)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
             .then(data => {
+                console.log('Data received:', data); 
                 auteursList.innerHTML = '';
                 data.items.forEach(auteur => {
                     const col = document.createElement('div');
@@ -29,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     auteursList.appendChild(col);
                 });
             })
-            .catch(error => console.error('Erreur:', error));
+            .catch(error => {
+                console.error('Erreur:', error); 
+            });
     }
 
     searchButton.addEventListener('click', function() {

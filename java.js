@@ -17,30 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         console.log('Fetching data from:', url); 
-        
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            auteursList.innerHTML = '';
-            data.items.forEach(auteur => {
-                const col = document.createElement('div');
-                col.className = 'col-md-4';
-                col.innerHTML = `
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${auteur.nom}</h5>
-                            <p class="card-text">${auteur.biographie}</p>
-                            <p class="card-text"><small class="text-muted">Date de naissance: ${auteur.date_naissance}</small></p>
-                            <p class="card-text"><small class="text-muted">Date de décès: ${auteur.date_deces ? auteur.date_deces : 'N/A'}</small></p>
-                        </div>
-                    </div>
-                `;
-                auteursList.appendChild(col);
-            });
-        })
-        .catch(error => console.error('Erreur:', error));
-}
 
-searchButton.addEventListener('click', fetchAuteurs);
-fetchAuteurs();
-});
+        fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })

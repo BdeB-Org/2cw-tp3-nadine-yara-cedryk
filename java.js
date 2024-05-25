@@ -25,3 +25,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return response.json();
         })
+        .then(data => {
+            console.log('Data received:', data); // Log the received data
+            auteursList.innerHTML = '';
+            data.items.forEach(auteur => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4';
+                col.innerHTML = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">${auteur.nom}</h5>
+                            <p class="card-text">${auteur.biographie}</p>
+                            <p class="card-text"><small class="text-muted">Date de naissance: ${auteur.date_naissance}</small></p>
+                            <p class="card-text"><small class="text-muted">Date de décès: ${auteur.date_deces ? auteur.date_deces : 'N/A'}</small></p>
+                        </div>
+                    </div>
+                `;
+                auteursList.appendChild(col);
+            });
+        })
+        .catch(error => {
+            console.error('Erreur:', error); 
+            auteursList.innerHTML = `<p class="text-danger">Erreur lors de la récupération des données.</p>`;
+        });
+}
+
+searchButton.addEventListener('click', fetchAuteurs);
+fetchAuteurs();
+});

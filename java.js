@@ -1,26 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const auteursSelect = document.getElementById('auteurs-select');
-    const auteurDetails = document.getElementById('auteur-details');
+    const auteursList = document.getElementById('auteurs-list');
+    const searchButton = document.getElementById('search-button');
+    const searchNom = document.getElementById('search-nom');
 
-    function fetchAuteurs() {
-        fetch('http://127.0.0.1:8080/ords/bibliotheque/auteur/')
+    function fetchAuteurs(query = '') {
+        let url = 'http://127.0.0.1:8080/ords/bibliotheque/auteur/';
+        if (query) {
+            url += `?q={"nom":{"$like":"%${query}%"}}`;
+        }
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
+                auteursList.innerHTML = '';
                 data.items.forEach(auteur => {
-                    const option = document.createElement('option');
-                    option.value = auteur.id_auteur;
-                    option.textContent = auteur.nom;
-                    auteursSelect.appendChild(option);
-                });
-            })
-            .catch(error => console.error('Erreur:', error));
-    }
-    function fetchAuteurDetails(id) {
-        fetch(`http://127.0.0.1:8080/ords/bibliotheque/auteur/${id}`)
-            .then(response => response.json())
-            .then(auteur => {
-                auteurDetails.innerHTML = `
-                    <div class="col-md-12">
+                    const col = document.createElement('div');
+                    col.className = 'col-md-4';
+                    col.innerHTML = `
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">${auteur.nom}</h5>
@@ -29,19 +25,18 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <p class="card-text"><small class="text-muted">Date de décès: ${auteur.date_deces ? new Date(auteur.date_deces).toLocaleDateString() : 'N/A'}</small></p>
                             </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                    auteursList.appendChild(col);
+                });
             })
             .catch(error => console.error('Erreur:', error));
     }
-    auteursSelect.addEventListener('change', function() {
-        const selectedId = this.value;
-        if (selectedId) {
-            fetchAuteurDetails(selectedId);
-        } else {
-            auteurDetails.innerHTML = '';
-        }
+
+    searchButton.addEventListener('click', function() {
+        const nom = searchNom.value;
+        fetchAuteurs(nom);
     });
 
+    
     fetchAuteurs();
 });

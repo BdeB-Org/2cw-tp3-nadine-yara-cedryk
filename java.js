@@ -34,4 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Erreur:', error));
     }
-    
+    auteursSelect.addEventListener('change', function() {
+        const selectedId = this.value;
+        if (selectedId) {
+            fetchAuteurDetails(selectedId);
+        } else {
+            auteurDetails.innerHTML = '';
+        }
+    });
+
+    fetchAuteurs();
+});

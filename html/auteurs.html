@@ -23,10 +23,11 @@
         </nav>
         <h1 class="text-center mb-4">Liste des Auteurs</h1>
         <div class="row mb-4">
-            <div class="col-md-12">
-                <select id="auteurs-select" class="form-control">
-                    <option value="">Sélectionnez un auteur</option>
-                </select>
+            <div class="col-md-8">
+                <input type="text" id="search-nom" class="form-control" placeholder="Rechercher par nom">
+            </div>
+            <div class="col-md-4">
+                <button id="search-button" class="btn btn-primary btn-block">Rechercher</button>
             </div>
         </div>
         <div id="auteurs-list" class="row"></div>

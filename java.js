@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const dateNaissance = searchDateNaissance.value;
 
         if (nom) {
-            url += `?q={"nom":{"$like":"%${nom}%"}}`;
+            url += `?nom=${encodeURIComponent(nom)}`;
         }
         if (dateNaissance) {
-            url += nom ? '&' : '?';
-            url += `q={"date_naissance":"${dateNaissance}"}`;
+            url += nom ? `&date_naissance=${encodeURIComponent(dateNaissance)}` : `?date_naissance=${encodeURIComponent(dateNaissance)}`;
         }
+
+        console.log('Fetching data from:', url); 
+        
         fetch(url)
         .then(response => response.json())
         .then(data => {

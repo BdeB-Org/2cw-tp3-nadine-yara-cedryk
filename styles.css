@@ -21,18 +21,29 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.message-Bibliotheque {
+  width: 100%;
+  height: 10em;
+  position: relative;
+  display: flex;
+}
+
+.message-Bibliotheque p{
+    align-items: center;
+}
+
 .image-option-Accueil {
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .image-option-Accueil img {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-option-Accueil img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

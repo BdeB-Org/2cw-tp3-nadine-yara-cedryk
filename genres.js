@@ -21,3 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="card-text">${genre.description}</p>
                         </div>
                     </div>
+                    `;
+                    genresList.appendChild(col);
+                });
+            })
+            .catch(error => console.error('Erreur:', error));
+    }
+
+    searchButton.addEventListener('click', () => fetchGenres(searchInput.value));
+    fetchGenres();
+});

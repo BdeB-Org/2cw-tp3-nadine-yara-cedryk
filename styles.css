@@ -73,8 +73,9 @@ body {
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent background to the container */
+  
+}
+background: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent background to the container */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}

@@ -7,3 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (query) {
             url += `?q={"nom":{"$like":"%${query}%"}}`;
         }
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            genresList.innerHTML = '';
+            data.items.forEach(genre => {

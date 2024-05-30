@@ -62,3 +62,19 @@ body {
   overflow: hidden;
   position: relative;
 }
+
+body {
+  background-image: url('/2cw-tp3-nadine-yara-cedryk/image/jessica-ruscello-OQSCtabGkSY-unsplash.jpg');
+  background-size: cover; /* Adjusts the image to cover the entire background */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-attachment: fixed; /* Makes the background image fixed during scrolling */
+  background-position: center; /* Centers the background image */
+  color: white; /* Ensures text is readable on the dark background */
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent background to the container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

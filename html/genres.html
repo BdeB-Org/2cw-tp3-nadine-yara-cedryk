@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Genres</title>
+    <title>Bibliothèque - Genres</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/2cw-tp3-nadine-yara-cedryk/styles.css">
 </head>
@@ -22,11 +22,19 @@
             </div>
         </nav>
         <h1 class="text-center mb-4">Liste des Genres</h1>
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <input type="text" id="search-nom" class="form-control" placeholder="Rechercher par nom">
+            </div>
+            <div class="col-md-4">
+                <button id="search-button" class="btn btn-primary btn-block">Rechercher</button>
+            </div>
+        </div>
         <div id="genres-list" class="row"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="genres.js"></script>
+    <script src="/2cw-tp3-nadine-yara-cedryk/genres.js"></script>
 </body>
 </html>

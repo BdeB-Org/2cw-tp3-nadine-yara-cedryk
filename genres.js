@@ -12,3 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             genresList.innerHTML = '';
             data.items.forEach(genre => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4';
+                col.innerHTML = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">${genre.nom}</h5>
+                            <p class="card-text">${genre.description}</p>
+                        </div>
+                    </div>

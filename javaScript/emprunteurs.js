@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${emprunteur.nom}</h5>
-                        
+                        <p class="card-text">ID: ${emprunteur.id_emprunteur}</p>
                         <p class="card-text">Adresse: ${emprunteur.email}</p>
                         <p class="card-text">Téléphone: ${emprunteur.numero_telephone}</p>
+                        <p class="card-text">Date inscription:  ${new Date(emprunteur.date_inscription).toLocaleDateString()}</p>
                     </div>
                 </div>
             `;

@@ -17,3 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             `;
+            emprunteursList.appendChild(col);
+        });
+    })
+    .catch(error => console.error('Erreur:', error));
+}
+
+fetchEmprunteurs();
+});

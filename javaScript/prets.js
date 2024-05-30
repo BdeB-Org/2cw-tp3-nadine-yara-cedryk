@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     col.innerHTML = `
                     <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Prêt ID: ${prêt.id_prêt}</h5>
-                        <p class="card-text">Date de prêt: ${prêt.date_prêt}</p>
-                        <p class="card-text">Date de retour: ${prêt.date_retour}</p>
+                        <h5 class="card-title">Prêt ID: ${prêt.id_pret}</h5>
+                        <p class="card-text">Date de prêt: ${new Date(prêt.date_pret).toLocaleDateString()}</p>
+                        <p class="card-text">Date de retour: ${new Date(prêt.date_retour).toLocaleDateString()}</p>
                         <p class="card-text">Emprunteur ID: ${prêt.emprunteurs_id_emprunteur}</p>
-                        <p class="card-text">Livre ID: ${prêt.livres_id_livre}</p>
+                        <p class="card-text">Livre ID: ${prêt.id_livre}</p>
                     </div>
                 </div>
                 `;

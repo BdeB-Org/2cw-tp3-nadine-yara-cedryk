@@ -18,3 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p class="card-text">Livre ID: ${prêt.livres_id_livre}</p>
                     </div>
                 </div>
+                `;
+                pretsList.appendChild(col);
+            });
+        })
+        .catch(error => console.error('Erreur:', error));
+}
+
+fetchPrets();
+});

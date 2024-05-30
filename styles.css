@@ -74,14 +74,15 @@ body {
 }
 .container a{
   color: black;
+  font-size: 30px;
+  font-weight: 200;
 }
 .navbar-option{
   display: flex;
   align-items: center;
   justify-content: center;
- 
+ margin-left: 100px;
 }
 .navbar-option a{
   margin-left: 15px;
 }
-

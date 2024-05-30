@@ -1,8 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const livresList = document.getElementById('livres-list');
+    const searchButton = document.getElementById('search-button');
+    const searchInput = document.getElementById('search-nom');
 
-    function fetchLivres() {
-        fetch('http://127.0.0.1:8080/ords/bibliotheque/livres/')
+    function fetchLivres(query = '') {
+        let url = 'http://127.0.0.1:8080/ords/bibliotheque/livres/';
+        if (query) {
+            url += `?q={"titre":{"$like":"%${query}%"}}`;
+        }
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 livresList.innerHTML = '';
@@ -26,5 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Erreur:', error));
     }
 
+    searchButton.addEventListener('click', () => fetchLivres(searchInput.value));
     fetchLivres();
 });

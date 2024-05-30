@@ -71,11 +71,9 @@ body {
 .container {
   width: 100%;
   height: 80px;
-  margin:0px;
- 
 }
 .container a{
-  color: green;
+  color: black;
 }
 .navbar-option{
   display: flex;

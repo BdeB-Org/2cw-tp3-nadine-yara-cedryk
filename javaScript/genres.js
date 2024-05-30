@@ -7,9 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (query) {
             url += `?q={"nom":{"$like":"%${query}%"}}`;
         }
+        console.log('Fetching URL:', url);
         fetch(url)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Data received:', data);
             genresList.innerHTML = '';
             data.items.forEach(genre => {
                 const col = document.createElement('div');

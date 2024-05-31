@@ -103,7 +103,10 @@ body {
   height: 275px;
   background-color: gray;
   margin: 10px;
+  overflow: hidden;
 }
 .square a {
-  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

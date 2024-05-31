@@ -46,7 +46,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(216, 213, 213);
+  background-color: rgba(216, 213, 213, 0.898);
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .message-Bibliotheque p {
   font-size: 72px;
@@ -105,6 +107,7 @@ body {
   background-color: gray;
   margin: 10px;
   overflow: hidden;
+  border-radius: 15px;
 }
 .square img {
   width: 100%;

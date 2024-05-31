@@ -90,3 +90,9 @@ body {
   font-size: 24px;
   font-weight: 200;
 }
+.carre-container{
+  display: grid;
+}
+.square{
+  background-color: gray;
+}

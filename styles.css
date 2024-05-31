@@ -63,11 +63,11 @@
 
 body {
   background-image: url("/2cw-tp3-nadine-yara-cedryk/image/jessica-ruscello-OQSCtabGkSY-unsplash.jpg");
-  background-size: cover; /* Adjusts the image to cover the entire background */
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
-  background-attachment: fixed; /* Makes the background image fixed during scrolling */
-  background-position: center; /* Centers the background image */
-  color: rgb(11, 10, 10); /* Ensures text is readable on the dark background */
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-position: center; 
+  color: rgb(11, 10, 10); 
 }
 
 .container-navbar {

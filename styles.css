@@ -99,14 +99,25 @@ body {
   padding: 100px;
 }
 .square{
+  position: relative;
   width: 400px;
   height: 275px;
   background-color: gray;
   margin: 10px;
   overflow: hidden;
 }
-.square a {
+.square img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.texte-overlay-square{
+  position:absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: gray;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14px;
 }

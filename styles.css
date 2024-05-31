@@ -113,11 +113,19 @@ body {
 }
 .texte-overlay-square{
   position:absolute;
-  bottom: 10px;
-  left: 10px;
+  width: 200px;
+  height: 80px;
+  bottom: 0px;
+  left: 0px;
   color: white;
-  background-color: gray;
+  background-color: rgba(153, 152, 152, 0.851);
   padding: 5px;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.texte-overlay-square p {
+  margin-top: 12px;
 }

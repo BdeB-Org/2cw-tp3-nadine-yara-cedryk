@@ -70,13 +70,13 @@ body {
   color: rgb(11, 10, 10); /* Ensures text is readable on the dark background */
 }
 
-.container {
+.container-navbar {
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: space-evenly;
 }
-.container a {
+.container-navbar a {
   color: black;
   font-size: 28px;
   font-weight: 400;
@@ -92,7 +92,7 @@ body {
   font-size: 24px;
   font-weight: 200;
 }
-.carre-container{
+.carre-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -100,7 +100,7 @@ body {
   width: 100%;
   padding: 100px;
 }
-.square{
+.square {
   position: relative;
   width: 400px;
   height: 275px;
@@ -114,8 +114,8 @@ body {
   height: 100%;
   object-fit: cover;
 }
-.texte-overlay-square{
-  position:absolute;
+.texte-overlay-square {
+  position: absolute;
   width: 200px;
   height: 80px;
   bottom: 0px;

@@ -91,14 +91,16 @@ body {
   font-weight: 200;
 }
 .carre-container{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 20px;
+  padding: 100px;
 }
 .square{
-  width: 100%;
-  padding-bottom: 100%;
+  width: 100px;
+  height: 100px;
   background-color: gray;
+  margin: 10px;
 }
